@@ -20,9 +20,9 @@ url = 'http://api.open-notify.org/iss-now.json'
 response = urllib.request.urlopen(url)
 result = json.loads(response.read())
 
-location = result['iss_position']
-lat = float(location['latitude'])
-lon = float(location['longitude'])
+position = result['iss_position']
+lat = float(position['latitude'])
+lon = float(position['longitude'])
 print('Latitude: ', lat)
 print('Longitude: ', lon)
 
@@ -78,3 +78,5 @@ result = json.loads(response.read())
 #print result
 over = result['response'][1]['risetime']
 location.write(time.ctime(over))
+
+turtle.done()
