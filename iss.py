@@ -13,7 +13,7 @@ print('People in Space: ', result['number'])
 people = result['people']
 
 for p in people:
-  print(p['name'], ' in ', p['craft'])
+    print(p['name'], ' in ', p['craft'])
 
 
 url = 'http://api.open-notify.org/iss-now.json'
@@ -48,13 +48,13 @@ iss.penup()
 iss.goto(lon, lat)
 
 # When Does ISS next pass over me?
-#london
-#lat = 51.5072
-#lon = 0.1275
+# London
+# lat = 51.5072
+# lon = 0.1275
 
 # Tokyo
-#lat = 35.689487
-#lon = 139.691706
+# lat = 35.689487
+# lon = 139.691706
 
 # Space Center, Houston
 # lat = 29.5502
@@ -67,15 +67,16 @@ lon = 121.6186
 location = turtle.Turtle()
 location.penup()
 location.color('yellow')
-location.goto(lon,lat)
+location.goto(lon, lat)
 location.dot(5)
 location.hideturtle()
 
-url = 'http://api.open-notify.org/iss-pass.json?lat=' + str(lat) + '&lon=' + str(lon)
+url = 'http://api.open-notify.org/iss-pass.json?lat=' + \
+    str(lat) + '&lon=' + str(lon)
 response = urllib.request.urlopen(url)
 result = json.loads(response.read())
 
-#print result
+# print result
 over = result['response'][1]['risetime']
 location.write(time.ctime(over))
 
